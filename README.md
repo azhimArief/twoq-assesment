@@ -6,7 +6,6 @@ This project is designed as part of the preliminary assessment for a Laravel Sof
 ## Features
 1. **Authentication**
    - User registration and login.
-   - Password reset functionality.
    - Secure authentication mechanisms provided by Laravel Breeze.
 
 2. **Company Management**

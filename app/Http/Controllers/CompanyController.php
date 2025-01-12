@@ -35,7 +35,7 @@ class CompanyController extends Controller
             'name' => 'required|string|max:255|unique:companies,name',
             'email' => 'required|email|max:255|unique:companies,email',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048|dimensions:min_width=100,min_height=100',
-            'website' => 'nullable|url|max:255|unique:companies,website',
+            'website' => 'required|url|max:255|unique:companies,website',
         ]);
 
         // Check if a file is uploaded
@@ -92,7 +92,6 @@ class CompanyController extends Controller
             // Delete old logo if it exists
             if ($company->logo) {
                 Storage::disk('public')->delete($company->logo);
-                // Storage::disk('public')->delete('logos/' . $company->logo);
             }
 
             // Store the new logo

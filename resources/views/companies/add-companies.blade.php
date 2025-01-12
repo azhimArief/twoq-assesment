@@ -29,7 +29,7 @@
                             <div class="col-md-6">
                                 <label for="email" class="form-label">Email address</label>
                                 <input type="email" class="form-control" id="email" name="email"
-                                    email="Enter email address" value="{{ old('email') }}">
+                                    placeholder="Enter email address" value="{{ old('email') }}">
                                 @error('email')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
@@ -43,16 +43,6 @@
                                 @error('logo')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
-                                <!-- Display uploaded logo if validation fails -->
-                                @if (session()->has('logo_path'))
-                                    <div class="mt-2">
-                                        <p>Uploaded logo:</p>
-                                        <img src="{{ asset('storage/' . session('logo_path')) }}" alt="Uploaded Logo" width="100">
-                                    </div>
-                                @endif
-                                {{-- <small class="form-text text-muted">
-                                    57_by_gydw1n_dbfbfmw.jpg
-                                </small> --}}
                             </div>
                             <!-- Website -->
                             <div class="col-md-6">
